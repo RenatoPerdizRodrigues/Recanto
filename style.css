@@ -1,0 +1,105 @@
+body {
+    background-color: #fff1e0;
+    background-image: url("back.jpg");
+    background-size: cover;
+    
+}
+
+#title { 
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    font-family: 'Gamja Flower', cursive;
+    font-size:150%;
+}
+
+a {
+    text-decoration: none;
+    color: #332d27;
+}
+
+a:visited {
+    color: #332d27;
+}
+
+a:hover {
+    color: #847464;
+}
+
+.main {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    margin: auto;
+}
+
+.content {
+    text-align: center;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #e2e2e2;
+    text-align: center;
+    padding: 5px;
+}
+
+form {
+    background-color: #f2e6e6;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+input {
+    margin: 8px 0;
+}
+
+.mensagem {
+    background-color: yellowgreen;
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 0px 0px 25px 25px;
+    animation-duration: 2s;
+    animation-name: slidein;
+    color: black;
+    position: fixed;
+    margin: auto;
+    top: -50px;
+    left: 20%;
+    text-align: center;
+}
+
+@keyframes slidein {
+    from {
+        position: fixed;
+        margin: auto;
+        top: -50px;
+    }
+
+    10% {
+        position: fixed;
+        margin: auto;
+        top: 0px;
+    }
+
+    90% {
+        position: fixed;
+        margin: auto;
+        top: 0px;
+    }
+
+    to {
+        position: fixed;
+        margin: auto;
+        top: -50px;
+    }
+}
