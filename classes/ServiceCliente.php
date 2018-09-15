@@ -9,7 +9,7 @@
         }
 
         public function cadastrar(){
-            $query = "INSERT INTO cliente(nome, sobrenome, datanasc, rg) VALUES (:nome, :sobrenome, :datanasc, :rg)";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":nome", $this->cliente->getNome());
             $stmt->bindValue(":sobrenome", $this->cliente->getSobrenome());
@@ -27,7 +27,7 @@
 
         public function buscar($conteudo, $tipo){
             if ($tipo == "nome"){
-                $query = "SELECT * FROM cliente WHERE nome LIKE :nome";
+                //$query = "";
                 $stmt = $this->db->prepare($query);
                 $stmt->bindValue(":nome", "%".$conteudo."%");
     
@@ -39,7 +39,7 @@
                     header("Location: ../../index.php");
                 }
             } elseif ($tipo == "id"){
-                $query = "SELECT * FROM cliente WHERE id = :id";
+                //$query = "";
                 $stmt = $this->db->prepare($query);
                 $stmt->bindValue(":id", $conteudo);
     
@@ -53,7 +53,7 @@
         }
 
         public function editar($id){
-            $query = "UPDATE cliente SET nome = :nome, sobrenome = :sobrenome, datanasc = :datanasc, rg = :rg WHERE id = :id";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":nome", $this->cliente->getNome());
             $stmt->bindValue(":sobrenome", $this->cliente->getSobrenome());
@@ -71,7 +71,7 @@
         }
 
         public function excluir($id){
-            $query = "DELETE FROM cliente WHERE id = :id";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":id", $id);
 

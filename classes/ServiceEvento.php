@@ -9,7 +9,7 @@
         }
 
         public function cadastrar(){
-            $query = "INSERT INTO evento(clienteid, datas, hora) VALUES (:clienteid, :datas, :hora)";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":clienteid", $this->evento->getCliente());
             $stmt->bindValue(":datas", $this->evento->getData());
@@ -26,7 +26,7 @@
 
         public function buscar($conteudo, $tipo){
             if ($tipo == "nome"){
-                $query = "SELECT evento.id, cliente.nome, cliente.sobrenome, evento.datas, evento.hora FROM evento CROSS JOIN cliente ON evento.clienteid = cliente.id WHERE cliente.nome = :nome;";
+                //$query = "";
                 $stmt = $this->db->prepare($query);
                 $stmt->bindValue(":nome", $conteudo);
     
@@ -38,7 +38,7 @@
                     header("Location: ../../index.php");
                 }
             } elseif ($tipo == "id"){
-                $query = "SELECT * FROM evento WHERE id = :id";
+                //$query = "";
                 $stmt = $this->db->prepare($query);
                 $stmt->bindValue(":id", $conteudo);
     
@@ -49,8 +49,7 @@
                     header("Location: ../../index.php");
                 }
             } elseif ($tipo == "data"){
-                //$query = "SELECT * FROM evento WHERE month(datas) = :mes AND year(datas) = :ano";
-                $query = "SELECT evento.id, cliente.nome, cliente.sobrenome, evento.datas, evento.hora FROM evento CROSS JOIN cliente ON evento.clienteid = cliente.id WHERE month(evento.datas) = :mes AND year(evento.datas) = :ano";
+                //$query = "";
                 $stmt = $this->db->prepare($query);
                 $stmt->bindValue(":mes", $conteudo[0]);
                 $stmt->bindValue(":ano", $conteudo[1]);
@@ -66,7 +65,7 @@
         }
 
         public function editar($id){
-            $query = "UPDATE evento SET datas = :datas, hora = :hora WHERE id = :id";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":datas", $this->evento->getData());
             $stmt->bindValue(":hora", $this->evento->getHora());
@@ -82,7 +81,7 @@
         }
 
         public function excluir($id){
-            $query = "DELETE FROM evento WHERE id = :id";
+            //$query = "";
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":id", $id);
 

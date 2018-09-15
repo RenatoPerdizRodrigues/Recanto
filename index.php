@@ -1,6 +1,5 @@
  <?php
     include "config.php";
-    $_SESSION['cadastro'] = "Sucesso";
     $title = "Index";
     
     if (isset($_SESSION['cadastro'])){
